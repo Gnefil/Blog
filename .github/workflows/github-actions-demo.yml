@@ -1,6 +1,7 @@
 name: Blog test and deploy
 run-name: ${{ github.actor }} is testing and deploying blog
 on:
+  workflow_dispatch
   push:
     branches: [ $default-branch ]
   pull_request:
