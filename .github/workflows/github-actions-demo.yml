@@ -23,7 +23,7 @@ jobs:
           cache-name: cache-node-modules
         with:
           path: ./
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-build-${{ env.cache-name }}}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
@@ -53,7 +53,7 @@ jobs:
       - uses: actions/cache@v3
         with:
           path: ./
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-build-${{ env.cache-name }}}
           run: ls
       - run: ls
 
