@@ -51,7 +51,8 @@ jobs:
           echo "${{ env.SSH_KEY }}" > ~/.ssh/id_rsa
           chmod 700 ~/.ssh/id_rsa
           scp -o StrictHostKeyChecking=no -r ./public ubuntu@13.40.196.20:/home/ubuntu/blog
-          ssh -o StrictHostKeyChecking=no ubuntu@13.40.196.20 'sudo mv /home/ubuntu/blog/* /var/www/html/blog/'
+          ssh -o StrictHostKeyChecking=no ubuntu@13.40.196.20 'sudo cp -r /home/ubuntu/blog/* /var/www/html/blog/'
+          ssh -o StrictHostKeyChecking=no ubuntu@13.40.196.20 'rm -r /home/ubuntu/blog'
 
       # - name: Move to production
       #   run: ssh deploy 'sudo mv /home/ubuntu/blog/* /var/www/html/blog/' 
