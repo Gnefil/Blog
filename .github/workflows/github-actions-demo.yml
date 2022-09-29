@@ -38,7 +38,7 @@ jobs:
         run: npm ci
       
       - name: Generate public folder
-      - run: npm run build
+        run: npm run build
 
   Deploy:
     needs: Build
