@@ -1,0 +1,59 @@
+name: Blog test and deploy
+run-name: ${{ github.actor }} is testing and deploying blog
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches: 
+      - main
+
+
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Clean install dependencies
+        run: npm ci
+      
+      - name: Build
+        run: npm run build
+
+      # - name: Deploy 
+      #   env:
+      #     SSH_KEY: ${{ secrets.SSH_KEY }}
+      #   run: |
+      #     mkdir ~/.ssh/
+      #     echo "${{ env.SSH_KEY }}" > ~/.ssh/id_rsa
+      #     # echo "${{ env.SSH_KEY }}" > ~/.ssh/deploy.key
+      #     # chmod 700 ~/.ssh/deploy.key
+      #     # cat >>~/.ssh/config <<END
+      #     # Host staging
+      #     #   HostName 13.40.196.20
+      #     #   User ubuntu
+      #     #   IdentityFile ~/.ssh/staging.key
+      #     #   StrictHostKeyChecking no
+      #     # END
+
+      # - name: Copy to home
+      #   run: scp -o StrictHostKeyChecking=no -r ./public/* ubuntu@13.40.196.20:/home/ubuntu/blog/
+
+      - name: Deploy to remote server
+        env:
+          SSH_KEY: ${{ secrets.SSH_KEY }}
+        run: |
+          mkdir ~/.ssh/
+          echo "${{ env.SSH_KEY }}" > ~/.ssh/id_rsa
+          chmod 700 ~/.ssh/id_rsa
+          scp -o StrictHostKeyChecking=no -r ./public ubuntu@13.40.196.20:/home/ubuntu/blog
+          ssh -o StrictHostKeyChecking=no ubuntu@13.40.196.20 'sudo cp -r /home/ubuntu/blog/* /var/www/html/blog/'
+          ssh -o StrictHostKeyChecking=no ubuntu@13.40.196.20 'rm -r /home/ubuntu/blog'
+
+      # - name: Move to production
+      #   run: ssh deploy 'sudo mv /home/ubuntu/blog/* /var/www/html/blog/' 
+
