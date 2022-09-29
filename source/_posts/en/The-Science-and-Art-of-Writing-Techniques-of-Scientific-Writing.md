@@ -4,7 +4,7 @@ catalog: true
 lang: en
 date: 2022-09-15 16:20:02
 subtitle: The Science and Art of Writing is a series of posts connected to the world of writing. This is the second post of the series in which we give ground the philosophy mentioned in the first post.
-header-img: https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/writing_techniques_bg.jpg
+header-img: https://raw.githubusercontent.com/Gnefil/Blog/main/img/post_images/writing_techniques_bg.jpg
 tags: [Scientific Writing, reader]
 categories: [The Science and Art of Writing]
 ---

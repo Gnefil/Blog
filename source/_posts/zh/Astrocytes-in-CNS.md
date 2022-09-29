@@ -4,7 +4,7 @@ catalog: true
 lang: zh
 date: 2022-03-19 12:39:43
 subtitle: 星状胶质细胞是居住在中枢神经系统（CNS）的最常见的胶质细胞之一。对于CNS来说，它们具有不可或缺的支持性功能，本篇博文将浅显地探讨它们的主要功能。
-header-img: https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/astrocytes_bg.jpg
+header-img: https://raw.githubusercontent.com/Gnefil/Blog/main/img/post_images/astrocytes_bg.jpg
 tags: [生物学, 神经科学, 胶质细胞, 星状胶质细胞, 如何制作大脑]
 categories: [神经科学]
 ---

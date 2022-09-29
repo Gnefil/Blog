@@ -4,7 +4,7 @@ catalog: true
 lang: zh
 date: 2022-04-14 00:29:46
 subtitle:  R是一种常用的数值计算语言，与Matlab、Python等相比较。它同样是我的一门调查课程中用于统计分析的语言。因此，我想带大家做一个关于R语言的小介绍。
-header-img: https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/intro_r.jpg
+header-img: https://raw.githubusercontent.com/Gnefil/Blog/main/img/post_images/intro_r.jpg
 tags: [R, 介绍]
 categories: [R]
 ---
@@ -18,7 +18,7 @@ categories: [R]
 ## RStudio
 我们几乎不可能只用命令行编程，如果我们使用的语言主要目的是为了获得数据的可视化分析，那就更不可能了。因此，使用`R`最常见的方式是通过`Rstudio`，一个开发R代码的图形用户界面软件。
 
-![rstudio_logo](https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/rstudio_logo.png)
+![rstudio_logo](https://raw.githubusercontent.com/Gnefil/Blog/main/img/post_images/rstudio_logo.png)
 
 
 当下载并进入后，它将显示4个面板（如果没有打开脚本面板，则为3个。从左上到右下，它们是
@@ -30,7 +30,7 @@ categories: [R]
   - **图像（Plots）** 标签页让你看到R的图像输出。
   - **包（Package）** 探索任何已安装的R包。
   - **帮助（Help）** 当help("some_command")被调用时输出相关信息
-![rstudio_4_panels](https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/rstudio_4_panels.jpg)
+![rstudio_4_panels](https://raw.githubusercontent.com/Gnefil/Blog/main/img/post_images/rstudio_4_panels.jpg)
 
 ## R软件包
 R作为一个大社区，伴随着海量软件包的支持。用以下方法安装一个包

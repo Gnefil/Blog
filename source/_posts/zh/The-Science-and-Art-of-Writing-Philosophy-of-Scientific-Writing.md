@@ -4,7 +4,7 @@ catalog: true
 lang: zh
 date: 2022-08-19 16:41:04
 subtitle: 写作的科学与艺术是一个涉及写作世界的系列文章。在这第一篇文章中，我们将讨论科学写作的哲学。这种体系的思想主要来自于芝加哥大学的Larry McEnerney教授。
-header-img: https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/writing_philosophy_bg.jpg
+header-img: https://raw.githubusercontent.com/Gnefil/Blog/main/img/post_images/writing_philosophy_bg.jpg
 tags: [科学写作, 写作, 期刊]
 categories: [写作的科学与艺术]
 ---

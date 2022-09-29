@@ -4,7 +4,7 @@ catalog: true
 lang: en
 date: 2022-03-19 12:33:15
 subtitle: Astrocytes is one of the most abundant glial cells that reside in the Central Nervous System (CNS). They carry indispensable supportive functions. What are their main functions? 
-header-img: https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/astrocytes_bg.jpg
+header-img: https://raw.githubusercontent.com/Gnefil/Blog/main/img/post_images/astrocytes_bg.jpg
 tags: [Biology, Neuroscience, Glial cells, Astrocytes, How to Make a Brain]
 categories: [Neuroscience]
 ---

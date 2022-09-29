@@ -4,7 +4,7 @@ catalog: true
 lang: en
 date: 2022-02-08 15:21:38
 subtitle: Patterning is one of the key processes which shapes the diversity and the role of each part of the Central Nervous System (CNS). In this post, we explore anterior-posterior axis patterning in frog (Xenopus Laevis) through an small answer essay to this question.
-header-img: https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/patterning_bg.jpg
+header-img: https://raw.githubusercontent.com/Gnefil/Blog/main/img/post_images/patterning_bg.jpg
 tags: [Biology, Neuroscience, Developmental Biology, Patterning, How to Make a Brain]
 categories: [Neuroscience]
 ---

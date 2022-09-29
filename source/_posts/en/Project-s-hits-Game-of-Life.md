@@ -4,7 +4,7 @@ catalog: true
 lang: en
 date: 2022-07-17 20:50:03
 subtitle: Project's hits is the serie about useful skills that I learnt during the developement of the projects. This is about the Game of Life, in which I noticed distinct ways we can use CSS clamp and how to draw patterns in any angle in JavaScript canvas.
-header-img: https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/game_of_life_bg.png
+header-img: https://raw.githubusercontent.com/Gnefil/Blog/main/img/post_images/game_of_life_bg.png
 tags: [CSS, JavaScript, clamp, canvas]
 categories: [Project's hit]
 ---
@@ -86,7 +86,7 @@ CSS clamp is a quite useful function, which can be dynamically adjusted to diffe
 
 ## JS canvas pattern flipping
 For the presentation of the Game of Life selection, I used HTML canvas and JS to render dynamic visualization. So I drew the cells using the built-in drawing function from canvas context. So how should each life be represented? In the end, I decided to use a lap of leaves to represent the cells after a few minutes of thinking. Resulting figure:
-![Cells in game of life](https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/game_of_life_cell.png)
+![Cells in game of life](https://raw.githubusercontent.com/Gnefil/Blog/main/img/post_images/game_of_life_cell.png)
 
 How to implement it exactly? The function `drawCell()` that draws a whole cell looks like this:
 ```javascript
@@ -156,7 +156,7 @@ drawLeaf = (deg, x_center, y_center, size, color) => {
 ```
 
 The result looks like this.
-! [One leaf in game of life](https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/game_of_life_leaf.png)
+! [One leaf in game of life](https://raw.githubusercontent.com/Gnefil/Blog/main/img/post_images/game_of_life_leaf.png)
 
 This example, if run, will only work for one leaf, and later we will see how to copy and rotate it. For now, let's briefly see how to construct one leaf.
 
@@ -165,7 +165,7 @@ This method that I use is rather clumsy. It might be better to use the drawn pic
 
 The steps in between are not too difficult in order to draw this leaf. First, assuming that we are drawing the leaf pointing upwards, the first step is to figure out each of the **key points** used to outline it. What is a key point? It refers to the points of change when drawing the contour lines. For example, if we want to draw the sides of a square, then its four corners are the key points because the line will change at this point. Similarly, this applies to arcs, where the intersection of two different arcs is a key point. In this example, `p1` to `p2` depicts the upper left arc, while `p2` to `p3` outlines another arc with different circle centers `c1` and `c2` (p.s. they are the same now, but the previous pattern version had two different circle centers, and it's more intuitive to split it into two parts, so I kept both circle centers).
 
-! [Points in leaves](https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/game_of_life_points.png)
+! [Points in leaves](https://raw.githubusercontent.com/Gnefil/Blog/main/img/post_images/game_of_life_points.png)
 
 Regarding the coordinate system of the key points, I used the center point of the respective X and Y axes as the origin (0, 0) coordinate in each cell. The top is +y, the bottom is -y, the left is -x, and the right is +x. This is useful when copying and rotating other leaves according to the center point, after all, the axis/point of rotation is the center point of X and Y axes. Of course, you can also use the upper left corner as the origin of the coordinate system. Then, find the relative coordinates of each key point with their respective centroids, notice that it is a rather lengthy step full of trials.
 
@@ -286,7 +286,7 @@ drawLeaf = (deg, x_center, y_center, size, color) => {
 ```
 
 Successful in getting the desired leaf cells!
-! [Cells in game of life](https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/game_of_life_cell.png)
+! [Cells in game of life](https://raw.githubusercontent.com/Gnefil/Blog/main/img/post_images/game_of_life_cell.png)
 
 ### Short summary
 In this JavaScript canvas article, we learned how to use trigonometric functions to rotate and copy a specific pattern. If the angular requirements and coordinate system starts at the center, you can just use these trigonometric functions directly in the table that I came up with at the end. But more importantly, is that this can be applied to different scenes and distinct angles. This article presents an idea, an example that can help and then be optimized by readers.

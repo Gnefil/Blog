@@ -4,7 +4,7 @@ catalog: true
 lang: zh
 date: 2022-02-08 15:21:46
 subtitle: 模式化是塑造中枢神经系统（CNS）的多样性和每个部分的作用的关键过程之一。在这篇文章中，我们通过对这个问题的回答文章，探讨青蛙（Xenopus Laevis）的前后轴模式化。
-header-img: https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/patterning_bg.jpg
+header-img: https://raw.githubusercontent.com/Gnefil/Blog/main/img/post_images/patterning_bg.jpg
 tags: [生物学, 神经科学, 发育生物学, 模式化, 如何制作大脑]
 categories: [神经科学]
 ---

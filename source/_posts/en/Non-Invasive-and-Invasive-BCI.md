@@ -4,7 +4,7 @@ catalog: true
 lang: en
 date: 2022-05-26 23:10:48
 subtitle: Brain Computer Interface (BCI) always seem to be part of an utopic future. It is an ambitious technology that connects human brain with digital computers. What if one day we want a BCI connected, how would you choose between these two main types; non-invasive BCI or invasive BCI?
-header-img: https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/bci_bg.jpg
+header-img: https://raw.githubusercontent.com/Gnefil/Blog/main/img/post_images/bci_bg.jpg
 tags: [Biology, Neuroscience, BCI]
 categories: [Neuroscience]
 ---
@@ -13,7 +13,7 @@ categories: [Neuroscience]
 ---
 Brain Computer Interfaces are systems that read and interpret electrical signals from brain’s intention and execute them via an external device instead of one’s own body, Figure 1 is a visual example. The current progress in BMI is divided into two main methodologies, by the way sensors are placed: non-invasive BMI and invasive BMI. Due to its increase in popularity and prominent results, an overview of the characteristics of each method is a topic worth examining. The following essay aims to discuss the different advantages and disadvantages that each brings. Non-invasive methods in contrast to the invasive methods, are merited by the global scale detection and safeness, they offer a more convenient way in respect to its social acceptance and have an unreplaceable niche. On the other hand, invasive methods have advantages over non-invasive in the higher quality and transfer rate, in their large potential to optimise current techniques and it is still an area to be explored.
 
-![BCI sketch](https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/bci_sketch.png)
+![BCI sketch](https://raw.githubusercontent.com/Gnefil/Blog/main/img/post_images/bci_sketch.png)
 <br/>
 
 ## BCI, BMI, origin
@@ -29,7 +29,7 @@ Non-invasive BCI research mainly focuses on Electroencephalogram (EEG). By adher
 ### Invasive style
 On the other side, invasive methods rely on a technique derived from single-cell recording, called Microelectrodes Array or Multielectrode Array (MEA). For the main discussion, MEA is also used as a reference to invasive methods. MEA consists of an array of small electrodes each at millimetres scale (e.g. Blackrock Neurotech Utah array), then through neurosurgery open up the skull to implant the array into deeper layers in the cortex. Despite its implanting complexity, investigations focused on this technique because of its potential, and produced many prominent results both in primates (Wessberg et. al, 2000; Serruya et. al, 2002; Velliste et. al, 2008) and human (Hochberg et. al, 2012). Similarly, MEA and single-cell recording are not unique invasive recording methods but are the most suitable (e.g., Positron Emission Tomography (PET) has a terrible time resolution). More comparisons in spatial and temporal resolution can be found in Figure 2, notice that when lower target size and detection time, higher resolution.
 
-![Sensoring techniques](https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/sensoring_techniques.png)
+![Sensoring techniques](https://raw.githubusercontent.com/Gnefil/Blog/main/img/post_images/sensoring_techniques.png)
 <br/>
 <br/>
 
@@ -66,7 +66,7 @@ Here are some common problems when exploring long-term degradation in invasive B
 By contrast, non-invasive BCI avoids this kind of concern. EEG recordings are damage-free and will not have to concern and try to tackle these long-term degradation problems, as wearing and replacement of external electrodes is much easier (Norton et. al, 2015).
 <br/>
 
-![Transition image](https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/bci_transition_1.jpg)
+![Transition image](https://raw.githubusercontent.com/Gnefil/Blog/main/img/post_images/bci_transition_1.jpg)
 <br/>
 
 #### BUT, non-invasive methods are optimising

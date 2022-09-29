@@ -4,7 +4,7 @@ catalog: true
 lang: en
 date: 2022-06-03 12:24:23
 subtitle: Brain Computer Interface (BCI) always seem to be part of an utopic future. It is an ambitious technology that connects human brain with digital computers. What if one day we want a BCI connected, how would you choose between these two main types; non-invasive BCI or invasive BCI?
-header-img: https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/bci_bg.jpg
+header-img: https://raw.githubusercontent.com/Gnefil/Blog/main/img/post_images/bci_bg.jpg
 tags: [Biology, Neuroscience, BCI]
 categories: [Neuroscience]
 ---
@@ -35,7 +35,7 @@ In addition to the quality of data, invasive BCI also overtakes non-invasives in
 Now, turning to the information transfer rate, it is another issue in favour of invasive BCI (Wolpaw et. al, 2002). The information transfer rate is concerned with how fast the relevant information is extracted. It goes beyond SNR, as SNR can be considered individually while the former is a rate for all multiple trials and considers the retrieving process. 
 <br>
 
-![Transition image](https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/bci_transition_2.jpg)
+![Transition image](https://raw.githubusercontent.com/Gnefil/Blog/main/img/post_images/bci_transition_2.jpg)
 <br>
 
 
@@ -50,7 +50,7 @@ Nonetheless, non-invasive literature did not stop looking for solutions to these
 Now, moving to the final section, the most valuable characteristic that invasive methods have, is probably all the potential that it still has. As the investigation into BCI progresses, more and more solutions have been given to limitations on invasive BCI. For instance, several improvements have been mentioned when talking about safeness and long-term degradation in the first part. Due to the direct connections of MEA, it may be an approach to elaborate somatosensory inputs (Waldert, 2016). Because of these improvements, invasive methods have prospering potential (Lebedev and Nicolelis, 2006; Saha et. al, 2021). On the other hand, improvements in non-invasive methods have been severely limited by the external nature of EEG; even though there is optimisation in aspects away from the recording, the main obstacles to getting high quality and variety of data have not changed too much for the last 50 years (Millán and Carmena, 2010). 
 <br>
 
-![Transition image](https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/bci_transition_3.jpg)
+![Transition image](https://raw.githubusercontent.com/Gnefil/Blog/main/img/post_images/bci_transition_3.jpg)
 
 
 ## ECoG, semi-invasive BCI

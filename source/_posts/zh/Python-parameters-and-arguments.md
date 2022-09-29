@@ -4,7 +4,7 @@ catalog: true
 lang: zh
 date: 2022-02-15 00:18:36
 subtitle: Python 简洁优雅的编码风格为开发者在编程时提供了极大的效率，尽管有时（指我自己）记住隐含的规范也是一件令人头疼的事。对于我来说，其中一个例子就是掌握Python的形参和实参。
-header-img: https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/python_parameters_arguments_bg.jpg
+header-img: https://raw.githubusercontent.com/Gnefil/Blog/main/img/post_images/python_parameters_arguments_bg.jpg
 tags: [Python, 参数]
 categories: [Python]
 ---

@@ -4,7 +4,7 @@ catalog: true
 lang: zh
 date: 2022-05-26 23:10:39
 subtitle: 脑计算机接口（BCI）总会给人感觉是一种乌托邦式未来的科技。它是一项雄心勃勃的技术，企图将人脑与数字计算机连接起来。假如在不遥远的未来，我们可以装上脑机接口，你将如何在这两种类型中选择；非侵入性BCI或侵入性BCI？
-header-img: https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/bci_bg.jpg
+header-img: https://raw.githubusercontent.com/Gnefil/Blog/main/img/post_images/bci_bg.jpg
 tags: [生物学, 神经科学, 脑机接口]
 categories: [神经科学]
 ---
@@ -13,7 +13,7 @@ categories: [神经科学]
 ---
 脑机接口是一种，读取且解释来自大脑意图的电信号，并通过外部设备而不是自己的身体执行，的系统，图1是一个直观的例子。目前，按传感器的放置方式，BMI的进展主要分为两种方法：非侵入性BMI和侵入性BMI。由于其普及程度的提高和突出的成果，对每种方法的特点进行概述是一个值得研究的话题。下面的文章旨在讨论每种方法带来的不同优势和劣势。与侵入性方法相比，非侵入性方法的优点是其整体范围的检测和安全性，它们在社会接受度高的情况下还是一种提供了方便性的方式，并且具有不可替代性。另一方面，侵入性方法比非侵入性方法的优势在于更高的质量和信息传输率，在优化现有技术方面有很大的潜力，而且这仍然是一个有待探索的领域。
 
-![BCI sketch](https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/bci_sketch.png)
+![BCI sketch](https://raw.githubusercontent.com/Gnefil/Blog/main/img/post_images/bci_sketch.png)
 <br/>
 
 ## 脑机，起源
@@ -29,7 +29,7 @@ categories: [神经科学]
 ### 侵入式，有创
 另一边，侵入式方法依赖于一种源自单细胞记录的技术，称为微电极阵列或多电极阵列（MEA）。在整篇的讨论中，MEA也被用来作为侵入式方法的参考。多电极阵列由一个小电极阵列组成，每个电极的尺寸为毫米级（如Blackrock Neurotech Utah阵列），然后通过神经外科手术打开头骨，将阵列植入大脑皮层的深层中。尽管它的植入很复杂，但由于它的潜力，许多研究集中在这一技术上，并在灵长类动物（Wessberg等人，2000；Serruya等人，2002；Velliste等人，2008）和人类（Hochberg等人，2012）产生了许多突出的结果。同样，MEA和单细胞记录也不是唯一的侵入性记录方法，但却是最合适的（例如，正电子发射断层扫描（PET）的时间分辨率很糟糕）。在空间和时间分辨率方面的更多比较可以在图2中找到，注意当目标大小和检测时间较低时，分辨率较高。
 
-![Sensoring techniques](https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/sensoring_techniques.png)
+![Sensoring techniques](https://raw.githubusercontent.com/Gnefil/Blog/main/img/post_images/sensoring_techniques.png)
 <br/>
 <br/>
 
@@ -68,7 +68,7 @@ categories: [神经科学]
 
 <br/>
 
-![Transition image](https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/bci_transition_1.jpg)
+![Transition image](https://raw.githubusercontent.com/Gnefil/Blog/main/img/post_images/bci_transition_1.jpg)
 <br/>
 
 #### BUT，非侵入性方法正在优化！

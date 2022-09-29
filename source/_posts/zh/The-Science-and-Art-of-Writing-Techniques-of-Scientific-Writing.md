@@ -4,7 +4,7 @@ catalog: true
 lang: zh
 date: 2022-09-15 16:20:16
 subtitle: 写作的科学与艺术是一个涉及写作世界的系列文章。这是该系列的第二篇文章，主旨将第一篇文章中提到的思想实质化到真文实字。
-header-img: https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/writing_techniques_bg.jpg
+header-img: https://raw.githubusercontent.com/Gnefil/Blog/main/img/post_images/writing_techniques_bg.jpg
 tags: [科学写作, 写作]
 categories: [写作的科学与艺术]
 ---
