@@ -14,6 +14,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+      - run: ls
 
       - name: Cache node modules
         id: cache-npm
@@ -40,6 +41,8 @@ jobs:
       - name: Generate public folder
         run: npm run build
 
+      - run: ls
+
   Deploy:
     needs: Build
     runs-on: ubuntu-latest
@@ -52,7 +55,7 @@ jobs:
           path: ./
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
           run: ls
-          run: pwd
+      - run: ls
 
 
     
