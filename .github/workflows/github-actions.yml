@@ -1,5 +1,6 @@
 name: Blog test and deploy
 run-name: ${{ github.actor }} is testing and deploying blog
+
 on:
   workflow_dispatch:
   push:
@@ -25,7 +26,8 @@ jobs:
         env:
           SSH_KEY: ${{ secrets.SSH_KEY }}
         run: |
-          echo env.SSH_KEY > ~/.ssh/id_rsa
+          mkdir ~/.ssh/
+          echo "${{ env.SSH_KEY }}" > ~/.ssh/id_rsa
           chmod 700 ~/.ssh/id_rsa
           scp -o StrictHostKeyChecking=no -r ./public ubuntu@13.40.196.20:/home/ubuntu/test
 
