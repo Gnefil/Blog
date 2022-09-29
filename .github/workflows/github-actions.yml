@@ -31,5 +31,5 @@ jobs:
           mkdir ~/.ssh/
           echo "${{ env.SSH_KEY }}" > ~/.ssh/id_rsa
           chmod 700 ~/.ssh/id_rsa
-          scp -i -o StrictHostKeyChecking=no -r ./public/* ubuntu@13.40.196.20:/var/www/html/blog/
+          scp -io StrictHostKeyChecking=no -r ./public/* ubuntu@13.40.196.20:/var/www/html/blog/
 
