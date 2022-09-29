@@ -11,11 +11,48 @@ on:
 jobs:
   Build:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
-      - run: npm ci
-      - run: npm run clean
+
+      - name: Cache node modules
+        id: cache-npm
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ./
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
+        name: List the state of node modules
+        continue-on-error: true
+        run: npm list
+
+
+      - name: Clean install dependencies
+        run: npm ci
+      
+      - name: Generate public folder
       - run: npm run build
-      - run: ls
-      - run: pwd
-      - run: Blog
+
+  Deploy:
+    needs: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/cache@v3
+        with:
+          path: ./
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          run: ls
+          run: pwd
+
+
+    
