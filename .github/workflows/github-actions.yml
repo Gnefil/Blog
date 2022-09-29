@@ -47,10 +47,9 @@ jobs:
         env:
           SSH_KEY: ${{ secrets.SSH_KEY }}
         run: |
-          echo env.SSH_KEY > ~/.ssh/id_rsa
           mkdir ~/.ssh/
           echo "${{ env.SSH_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
+          chmod 700 ~/.ssh/id_rsa
           scp -o StrictHostKeyChecking=no -r ./public ubuntu@13.40.196.20:/home/ubuntu/test
 
       # - name: Move to production
