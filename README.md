@@ -27,10 +27,3 @@ hexo g
 hexo s
 ```
 
-**Deploying**
-```batch
-hexo clean
-hexo g
-pdeploy.bat
-hexo d -m "The deploy message you want to add"
-```
