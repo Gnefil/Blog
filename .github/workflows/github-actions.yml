@@ -29,7 +29,19 @@ jobs:
           SSH_KEY: ${{ secrets.SSH_KEY }}
         run: |
           mkdir ~/.ssh/
-          echo "${{ env.SSH_KEY }}" > ~/.ssh/id_rsa
-          chmod 700 ~/.ssh/id_rsa
-          sudo scp -o StrictHostKeyChecking=no -r ./public/* ubuntu@13.40.196.20:/var/www/html/blog/
+          echo "${{ env.SSH_KEY }}" > ~/.ssh/deploy.key
+          chmod 700 ~/.ssh/deploy.key
+          cat >>~/.ssh/config <<END
+          Host staging
+            HostName 13.40.196.20
+            User ubuntu
+            IdentityFile ~/.ssh/staging.key
+            StrictHostKeyChecking no
+          END
+
+      - name: Copy to home
+        run: scp -o StrictHostKeyChecking=no -r ./public/* ubuntu@13.40.196.20:/home/ubuntu/blog/
+
+      - name: Move to production
+        run: ssh deploy 'sudo mv /home/ubuntu/blog/* /var/www/html/blog/' 
 
