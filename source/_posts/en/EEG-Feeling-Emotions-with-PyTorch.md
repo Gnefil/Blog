@@ -32,7 +32,7 @@ from torch.utils.data import DataLoader, Dataset
 ```
 
 ### 1.2 Turn on the **GPU**!
-To use the GPU (which makes code run faster), in the top left corner:
+To use the GPU (which makes code run faster) in Google Colab, in the top left corner:
 - Click on *Edit*
 - Click on *Notebook settings*
 - From the drop down menu in *Hardware accelerator*
@@ -51,7 +51,7 @@ print(f"Using {device}.")
 
 Find a place to play around, let's create a folder called `EEG` and we build everything inside it. The result should be `/content/EEG folder`.
 
-```py
+```sh
 # Create and get to `EEG` folder
 ! mkdir -p /content/EEG
 %cd /content/EEG/
@@ -64,7 +64,7 @@ Bring up the data✨, and let's see what it is made of!
 ### 2.1 Download the data
 The result data stored in `/content/EEG/data/emotions.csv`.
 
-```py
+```sh
 # Download the eeg data
 ! mkdir -p ./data
 ! wget -q -O ./data/emotions.csv https://github.com/UOMDSS/workshops-2022-2023/raw/main/semester-1/Week-7-EEG-Feeling-Emotions-Logistic-Regression/data/emotions.csv
@@ -141,7 +141,7 @@ By eye, how would you say the differences between positive and negative brain si
 Now it is time to write the **logistic regression** model ​⚒️!
 
 > ***Side notes***: we can if we want, write the step-by-step code of the model. But most of the times, we tend to use a *frameworks* (code), a prepared codebase that already has the skeleton of model. They are handy and easy to use.  
-> This notebook uses [**PyTorch**](https://pytorch.org/), a framework like this
+> This notebook uses [**PyTorch**](https://pytorch.org/), a framework like this.
 
 ### 3.1 Dataset class
 Imagine the datasets as spare data which could come in any form, how can PyTorch handle each case?  
