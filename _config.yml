@@ -14,7 +14,7 @@ timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://gnefil.github.io
+url: https://blog.gnefil.com
 permalink: :lang/:title/ # :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -104,14 +104,14 @@ theme: livemylife
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   - type: git
-    repo: https://github.com/Gnefil/Gnefil.github.io.git
+    repo: https://github.com/Gnefil/Blog.git
     branch: main
     # extend_dirs:
     #   - themes
     #   - config
     #   - img
   - type: git
-    repo: https://github.com/Gnefil/Gnefil.github.io.git
+    repo: https://github.com/Gnefil/Blog.git
     branch: src
     extend_dirs: /
     ignore_hidden: false
