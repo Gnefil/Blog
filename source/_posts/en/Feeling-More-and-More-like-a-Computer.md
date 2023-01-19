@@ -1,3 +1,13 @@
+---
+title: Feeling More and More like a Computer
+catalog: true
+lang: en
+date: 2023-01-15 12:22:59
+subtitle: He who studies computers might take care lest he thereby think like a computer. And remind your fate is gazing back to you.
+header-img: https://raw.githubusercontent.com/Gnefil/Blog/main/img/post_images/feeling_like_computer_bg.jpg
+tags:
+categories: [Low Tea Party]
+---
 No technical project analysis and no knowledge are shared today. Let's chill and chat a bit.
 
 Recently, I had an inexplicable feeling that *my thinking pattern is becoming more and more like a computer*. To be precise, the way I think about things is becoming more and more like the way a computer handles problems. What do I mean, please read on.
