@@ -3,7 +3,7 @@ title: Automated Deployment to AWS through Github Actions
 catalog: true
 lang: en
 date: 2023-01-15 12:23:53
-subtitle:
+subtitle: Frustrated about git pushing - remote access - git pulling all the time? This post will show you a simple automated way to deploy code through GitHub Actions.
 header-img: https://raw.githubusercontent.com/Gnefil/Blog/main/img/post_images/automated_deployment_bg.jpg
 tags: [Github Actions, AWS]
 categories: [Deployment]
@@ -136,7 +136,7 @@ jobs:
 ```
 
 ### Understanding each part of the workflow
-All these lines of code may sound like an overhead, but don't worry, we go through each of them.
+All these lines of code may sound bad enough, but don't worry, we go through each of them.
 
 - `name` denotes the name of this deployment workflow, I have called it *Github Actions example deployment*.
 - `on` refers to the moment you want to initialise this automated deployment (automated push to your server), set it to when `push` on branches `[ "main" ]` only. If you need to include a pull request as a condition, keep it. We are going to remove it for this little project.
@@ -207,7 +207,7 @@ run: |
   chmod 700 ~/.ssh/id_rsa
 ```
 
-Finally, in **step 3** we make use of `scp`, to copy the contents of the current folder of the runner (right now the runner is in the folder that contains the repo that just has been scanned) into the remote server.
+Finally, in **step 3** we make use of `scp`, to copy the contents of the current folder of the runner into the remote server.
 
 ![Current working directory of the runner](https://raw.githubusercontent.com/Gnefil/Blog/main/img/post_images/automated_deployment_runners_working_directory.png)
 
@@ -262,7 +262,7 @@ ubuntu@ip-172-31-44-130:~$ ls
 deployed_folder
 ```
 
-> Of course, this is not a correct solution to the replacement problem, as it won't remove any old files that you have removed in the most recent pushes. Another "broken" solution (like this one) is to remove the whole production folder and add it again, in each deployment. However, this will suppose an impaired web service for the duration of the deployment. More advanced and complete techniques would be to `rm` the differences between the two folders. Or to use two alternate folder locations, and while one is being deployed, run the other one in operation. 
+> Of course, this is not a correct solution to the replacement problem, as it won't remove any old files that you have removed in the most recent pushes. Another "broken" solution (like this one) is to remove the whole production folder and add it again, in each deployment. However, this will derive an impaired web service for the duration of the deployment. More advanced and complete techniques would be to `rm` the differences between the two folders. Or to use two alternate folder locations, and while one is being deployed, run the other one in operation. 
 
 And... we are done! Now you have a simple workflow that automatically pushes your code to `~/deployed_folder` whenever you make a git push to the main branch! This is the resulting code.
 
