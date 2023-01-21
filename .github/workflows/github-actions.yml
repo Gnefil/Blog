@@ -37,8 +37,8 @@ jobs:
           
       - name: Replace production code
         run: |
-          ${{ env.ssh-prefix }} path=$(${{ env.prod-dir }} | sed 's=\/=\\\/=g') # Create a local variable that inserts backslashes before slash
-          ${{ env.ssh-prefix }} paths=$("${{ env.prod-dir }}" | sed 's=\/=\\\/=g') # Create a local variable that inserts backslashes before slash
+          ${{ env.ssh-prefix }} path=$(${{ env.prod-dir }} | sed 's=\/=\\\/=g' | cat) # Create a local variable that inserts backslashes before slash
+          ${{ env.ssh-prefix }} paths=$("${{ env.prod-dir }}" | sed 's=\/=\\\/=g' | cat) # Create a local variable that inserts backslashes before slash
           echo first
           echo $path
           echo "second"
