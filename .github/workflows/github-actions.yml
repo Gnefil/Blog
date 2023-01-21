@@ -37,7 +37,7 @@ jobs:
           
       - name: Replace production code
         run: |
-          ${{ env.ssh-prefix }} path=$(echo "${{ env.prod-dir }}" | sed 's=\/=\\\/=g' | cat) # Create a local variable that inserts backslashes before slash  
+          ${{ env.ssh-prefix }} path=echo "${{ env.prod-dir }}" | sed 's=\/=\\\/=g' | cat # Create a local variable that inserts backslashes before slash  
           echo "$path"
           # ${{ env.ssh-prefix }} diff -qr ${{ env.prod-dir }} ${{ env.temp-dir }} | awk -v path="$path" '$0 ~ path {print substr($3, 1, length($3)-1) "/" $4}'
           # ${{ env.ssh-prefix }} sudo cp -r {{ env.temp-dir }}/* ${{ env.prod-dir }} # copy new
