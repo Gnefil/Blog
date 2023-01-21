@@ -38,10 +38,8 @@ jobs:
       - name: Replace production code
         run: |
           ${{ env.ssh-prefix }} 'diff -r ${{ env.prod-dir }} ${{ env.temp-dir }}' # remove old
-          ${{ env.ssh-prefix }} 'diff -r ${{ env.prod-dir }} ${{ env.temp-dir }} | awk "/${{ env.prod-dir }}/ {print substr($3, 1, length($3)-1)}" '
           echo "testing"
-          # ${{ env.ssh-prefix }} 'sudo cp -r {{ env.temp-dir }}/* ${{ env.prod-dir }}' # copy new
-          # ${{ env.ssh-prefix }} 'rm -r ${{ env.temp-dir }}' # delete temp
+
       
       
 
