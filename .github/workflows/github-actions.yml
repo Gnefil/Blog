@@ -49,7 +49,7 @@ jobs:
         env:
           level: step
         run:
-          echo ${{level}}
+          echo ${{env.level}}
       
       
 
