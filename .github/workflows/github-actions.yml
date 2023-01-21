@@ -33,13 +33,13 @@ jobs:
           mkdir ~/.ssh/
           echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_rsa
           chmod 700 ~/.ssh/id_rsa
-          scp -o StrictHostKeyChecking=no -r ./public ubuntu@13.40.196.20:${{ temp-dir }}
+          scp -o StrictHostKeyChecking=no -r ./public ubuntu@13.40.196.20:${{ env.temp-dir }}
           
       - name: Replace production code
         run: |
-          ${{ ssh-prefix }} 'diff -r ${{ prod-dir }} ${{ temp-dir }}' # remove old
-          # ${{ ssh-prefix }} 'sudo cp -r {{ temp-dir }}/* ${{ prod-dir }}' # copy new
-          # ${{ ssh-prefix }} 'rm -r ${{ temp-dir }}' # delete temp
+          ${{ env.ssh-prefix }} 'diff -r ${{ env.prod-dir }} ${{ env.temp-dir }}' # remove old
+          # ${{ env.ssh-prefix }} 'sudo cp -r {{ env.temp-dir }}/* ${{ env.prod-dir }}' # copy new
+          # ${{ env.ssh-prefix }} 'rm -r ${{ env.temp-dir }}' # delete temp
       
       
 
