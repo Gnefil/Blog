@@ -5,11 +5,13 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - main
+      - mains
   pull_request:
     branches: 
       - main
 
+env:
+  level: workflow
 
 jobs:
   Build:
@@ -34,4 +36,20 @@ jobs:
           scp -o StrictHostKeyChecking=no -r ./public ubuntu@13.40.196.20:/home/ubuntu/blog
           ssh -o StrictHostKeyChecking=no ubuntu@13.40.196.20 'sudo cp -r /home/ubuntu/blog/* /var/www/html/blog/'
           # ssh -o StrictHostKeyChecking=no ubuntu@13.40.196.20 'rm -r /home/ubuntu/blog'
+          
+  Test:
+    runs-on: ubuntu-latest
+    env:
+      level: job
+      
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: random
+        env:
+          level: step
+        run:
+          echo ${{level}}
+      
+      
 
