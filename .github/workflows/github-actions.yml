@@ -15,6 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     
     env:
+      ssh-prefix: ssh -o StrictHostKeyChecking=no ubuntu@13.40.196.20
       temp-dir: /home/ubuntu/blog
       prod-dir: /var/www/html/blog
 
@@ -32,10 +33,13 @@ jobs:
           mkdir ~/.ssh/
           echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_rsa
           chmod 700 ~/.ssh/id_rsa
-          scp -o StrictHostKeyChecking=no -r ./public ubuntu@13.40.196.20:/home/ubuntu/blog
-          ssh -o StrictHostKeyChecking=no ubuntu@13.40.196.20 'sudo cp -r /home/ubuntu/blog /var/www/html/blog'
-          # ssh -o StrictHostKeyChecking=no ubuntu@13.40.196.20 'rm -r /home/ubuntu/blog'
+          scp -o StrictHostKeyChecking=no -r ./public ubuntu@13.40.196.20:${{ temp-dir }}
           
+      - name: Replace production code
+        run: |
+          ${{ ssh-prefix }} 'diff -r ${{ prod-dir }} ${{ temp-dir }}' # remove old
+          # ${{ ssh-prefix }} 'sudo cp -r {{ temp-dir }}/* ${{ prod-dir }}' # copy new
+          # ${{ ssh-prefix }} 'rm -r ${{ temp-dir }}' # delete temp
       
       
 
