@@ -38,7 +38,7 @@ jobs:
       - name: Replace production code
         run: |
           echo "1"
-          echo "escaped-prod-dir=$(echo ${{ env.prod-dir }} | sed 's=\/=\\\/=g')" >> GITHUB_ENV
+          echo "escaped-prod-dir=$(echo ${{ env.prod-dir }} | sed 's=\/=\\\/=g')" >> $GITHUB_ENV
           ${{ env.ssh-prefix }} path=$(echo "/var/www/html/blog" | sed 's=\/=\\\/=g') # Create a local variable that inserts backslashes before slash  
           echo "2"
           echo "${{ env.escaped-prod-dir }}"
