@@ -38,7 +38,10 @@ jobs:
           
       - name: Replace production code
         run: |
-          ${{ env.ssh-prefix }} rm $(diff -rq ${{ env.prod-dir }}/ ${{ env.temp-dir }}/ | awk '/${{ env.esc-prod-dir }}/ {print substr($3, 1, length($3)-1) "/" $4}') # remove removed old files
+          ${{ env.ssh-prefix }} pwd
+          ${{ env.ssh-prefix }} ls
+          ${{ env.ssh-prefix }} ls /var/www/html/
+          ${{ env.ssh-prefix }} diff -rq ${{ env.prod-dir }} ${{ env.temp-dir }} | awk '/${{ env.esc-prod-dir }}/ {print substr($3, 1, length($3)-1) "/" $4}' | rm # remove removed old files
           ${{ env.ssh-prefix }} sudo cp -r ${{ env.temp-dir }}/* ${{ env.prod-dir }} # copy new
           ${{ env.ssh-prefix }} rm -r ${{ env.temp-dir }} # delete temp
 
