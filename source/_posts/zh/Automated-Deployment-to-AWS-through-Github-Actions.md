@@ -275,8 +275,8 @@ ubuntu@ip-172-31-44-130:~$
 run: |
   cd ..
   scp -o StrictHostKeyChecking=no -r ./my_deployment_project ubuntu@13.40.196.20:/home/ubuntu/temp
-  ssh -o StrictHostKeyChecking=no ubuntu@13.40.196.20 "cp -r /home/ubuntu/temp/* /home/ubuntu/deployed_folder/" # Copy content from the temp folder to production folder
-  ssh -o StrictHostKeyChecking=no ubuntu@13.40.196.20 "rm -r /home/ubuntu/temp" # Remove the temp folder
+  ssh -o StrictHostKeyChecking=no ubuntu@13.40.196.20 cp -r /home/ubuntu/temp/* /home/ubuntu/deployed_folder/ # Copy content from the temp folder to production folder
+  ssh -o StrictHostKeyChecking=no ubuntu@13.40.196.20 rm -r /home/ubuntu/temp # Remove the temp folder
 ```
 
 在某些时刻，这将在服务器中自动发生：
@@ -323,8 +323,8 @@ jobs:
           chmod 700 ~/.ssh/id_rsa
           cd ..
           scp -o StrictHostKeyChecking=no -r ./my_deployment_project ubuntu@13.40.196.20:/home/ubuntu/temp
-          ssh -o StrictHostKeyChecking=no ubuntu@13.40.196.20 "cp -r /home/ubuntu/temp/* /home/ubuntu/deployed_folder/"
-          ssh -o StrictHostKeyChecking=no ubuntu@13.40.196.20 "rm -r /home/ubuntu/temp" 
+          ssh -o StrictHostKeyChecking=no ubuntu@13.40.196.20 cp -r /home/ubuntu/temp/* /home/ubuntu/deployed_folder/
+          ssh -o StrictHostKeyChecking=no ubuntu@13.40.196.20 rm -r /home/ubuntu/temp 
 ```
 
 # 根据你的需要进行个性化定制
@@ -364,9 +364,9 @@ jobs:
           echo "${{ env.SSH_KEY }}" > ~/.ssh/id_rsa
           chmod 700 ~/.ssh/id_rsa
           scp -o StrictHostKeyChecking=no -r ./public ubuntu@13.40.196.20:/home/ubuntu/blog
-          ssh -o StrictHostKeyChecking=no ubuntu@13.40.196.20 'sudo cp -r /home/ubuntu/blog/* /var/www/html/blog/'
-          ssh -o StrictHostKeyChecking=no ubuntu@13.40.196.20 'rm -r /home/ubuntu/blog'
+          ssh -o StrictHostKeyChecking=no ubuntu@13.40.196.20 sudo cp -r /home/ubuntu/blog/* /var/www/html/blog/
+          ssh -o StrictHostKeyChecking=no ubuntu@13.40.196.20 rm -r /home/ubuntu/blog
 
 ```
 
-在这个脚本中，我通过引入`npm`（Node Package Manager）命令来节省安装、编译和测试的时间，我需要用这些命令来创建我的博客的风格。在使用GitHub Actions之前，我需要用`hexo g`在电脑上编译整个项目（hexo是一个基于Node的博客框架），然后用`hexo d`push，只push`public`文件夹。现在我使用GitHub Actions，我可以忘掉这一切，直接git push。Workflow会处理剩下的问题。
+在这个脚本中，我通过引入`npm`（Node Package Manager）命令来节省安装、编译和测试的时间，我需要用这些命令来渲染我的博客。在使用GitHub Actions之前，我需要用`hexo g`在电脑上编译整个项目（hexo是一个基于Node的博客框架），然后用`hexo d`push，只push`public`文件夹。现在我使用GitHub Actions，我可以忘掉这一切，直接git push。Workflow会处理剩下的问题。

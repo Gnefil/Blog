@@ -242,8 +242,8 @@ This is because the second time we are trying to `scp` in the same folder, we ar
 run: |
   cd ..
   scp -o StrictHostKeyChecking=no -r ./my_deployment_project ubuntu@13.40.196.20:/home/ubuntu/temp
-  ssh -o StrictHostKeyChecking=no ubuntu@13.40.196.20 "cp -r /home/ubuntu/temp/* /home/ubuntu/deployed_folder/" # Copy content from the temp folder to production folder
-  ssh -o StrictHostKeyChecking=no ubuntu@13.40.196.20 "rm -r /home/ubuntu/temp" # Remove the temp folder
+  ssh -o StrictHostKeyChecking=no ubuntu@13.40.196.20 cp -r /home/ubuntu/temp/* /home/ubuntu/deployed_folder/ # Copy content from the temp folder to production folder
+  ssh -o StrictHostKeyChecking=no ubuntu@13.40.196.20 rm -r /home/ubuntu/temp # Remove the temp folder
 ```
 
 At some moment, this would happen automatically in the server:
@@ -290,8 +290,8 @@ jobs:
           chmod 700 ~/.ssh/id_rsa
           cd ..
           scp -o StrictHostKeyChecking=no -r ./my_deployment_project ubuntu@13.40.196.20:/home/ubuntu/temp
-          ssh -o StrictHostKeyChecking=no ubuntu@13.40.196.20 "cp -r /home/ubuntu/temp/* /home/ubuntu/deployed_folder/"
-          ssh -o StrictHostKeyChecking=no ubuntu@13.40.196.20 "rm -r /home/ubuntu/temp" 
+          ssh -o StrictHostKeyChecking=no ubuntu@13.40.196.20 cp -r /home/ubuntu/temp/* /home/ubuntu/deployed_folder/
+          ssh -o StrictHostKeyChecking=no ubuntu@13.40.196.20 rm -r /home/ubuntu/temp 
 ```
 
 # Personalise to your needs
@@ -331,8 +331,8 @@ jobs:
           echo "${{ env.SSH_KEY }}" > ~/.ssh/id_rsa
           chmod 700 ~/.ssh/id_rsa
           scp -o StrictHostKeyChecking=no -r ./public ubuntu@13.40.196.20:/home/ubuntu/blog
-          ssh -o StrictHostKeyChecking=no ubuntu@13.40.196.20 'sudo cp -r /home/ubuntu/blog/* /var/www/html/blog/'
-          ssh -o StrictHostKeyChecking=no ubuntu@13.40.196.20 'rm -r /home/ubuntu/blog'
+          ssh -o StrictHostKeyChecking=no ubuntu@13.40.196.20 sudo cp -r /home/ubuntu/blog/* /var/www/html/blog/
+          ssh -o StrictHostKeyChecking=no ubuntu@13.40.196.20 rm -r /home/ubuntu/blog
 
 ```
 
