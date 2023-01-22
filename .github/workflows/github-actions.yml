@@ -38,7 +38,7 @@ jobs:
           
       - name: Replace production code
         run: |
-          ${{ env.ssh-prefix }} 'diff -rq ${{ env.prod-dir }} ${{ env.temp-dir }} | grep Only | awk '"'"' '/${{ env.esc-prod-dir }}/ {print substr($3, 1, length($3)-1) "/" $4}' '"'"'> remove.txt '
+          ${{ env.ssh-prefix }} diff -rq ${{ env.prod-dir }} ${{ env.temp-dir }} | grep Only | awk '/${{ env.esc-prod-dir }}/ {print substr($3, 1, length($3)-1) "/" $4}' | ${{ env.ssh-prefix }} remove.txt
           ${{ env.ssh-prefix }} ls
           echo "-"
           ls
