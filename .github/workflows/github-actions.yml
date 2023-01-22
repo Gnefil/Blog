@@ -38,12 +38,10 @@ jobs:
           
       - name: Replace production code
         run: |
-          ${{ env.ssh-prefix }} diff -rq ${{ env.prod-dir }} ${{ env.temp-dir }} | grep Only | awk '/${{ env.esc-prod-dir }}/ {print substr($3, 1, length($3)-1) "/" $4}' | ${{ env.ssh-prefix }} remove.txt
-          ${{ env.ssh-prefix }} ls
-          echo "-"
-          ls
-          ${{ env.ssh-prefix }} 'while read line; do sudo rm -r "$line"; done < remove.txt' # remove removed old files
-          ${{ env.ssh-prefix }} rm remove.txt 
+          ${{ env.ssh-prefix }} diff -rq ${{ env.prod-dir }} ${{ env.temp-dir }} | grep Only | awk '/${{ env.esc-prod-dir }}/ {print substr($3, 1, length($3)-1) "/" $4}' | remove.txt
+          scp -o StrictHostKeyChecking=no remove.txt ubuntu@13.40.196.20:${{ env.temp-dir }}/remove.txt
+          ${{ env.ssh-prefix }} 'while read line; do sudo rm -r "$line"; done < ${{ env.temp-dir }}/remove.txt' # remove removed old files
+          ${{ env.ssh-prefix }} rm ${{ env.temp-dir }}/remove.txt 
           ${{ env.ssh-prefix }} sudo cp -r ${{ env.temp-dir }}/* ${{ env.prod-dir }}
           ${{ env.ssh-prefix }} rm -r ${{ env.temp-dir }} 
 
