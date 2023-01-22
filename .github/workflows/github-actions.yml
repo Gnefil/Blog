@@ -46,7 +46,7 @@ jobs:
           echo "${{ env.escaped-prod-dir }}"
 
           echo "3"
-          ${{ env.ssh-prefix }} diff -qr ${{ env.prod-dir }} ${{ env.temp-dir }} | awk '/${{ esc-prod-dir }}/ {print substr($3, 1, length($3)-1) "/" $4}'
+          ${{ env.ssh-prefix }} diff -qr ${{ env.prod-dir }} ${{ env.temp-dir }} | awk '/${{ env.esc-prod-dir }}/ {print substr($3, 1, length($3)-1) "/" $4}'
           # ${{ env.ssh-prefix }} sudo cp -r {{ env.temp-dir }}/* ${{ env.prod-dir }} # copy new
           # ${{ env.ssh-prefix }} rm -r ${{ env.temp-dir }} # delete temp
 
