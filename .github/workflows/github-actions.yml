@@ -39,7 +39,8 @@ jobs:
       - name: Replace production code
         run: |
           ${{ env.ssh-prefix }} toDelete=$(diff -rq ${{ env.prod-dir }} ${{ env.temp-dir }} | grep Only | awk '/${{ env.esc-prod-dir }}/ {print substr($3, 1, length($3)-1) "/" $4}')
-          ${{ env.ssh-prefix }} sudo rm -r toDelete # remove removed old files
+          ${{ env.ssh-prefix }} echo "$toDelete"
+          ${{ env.ssh-prefix }} sudo rm -r $toDelete # remove removed old files
           ${{ env.ssh-prefix }} sudo cp -r ${{ env.temp-dir }}/* ${{ env.prod-dir }} # copy new
           ${{ env.ssh-prefix }} rm -r ${{ env.temp-dir }} # delete temp
 
