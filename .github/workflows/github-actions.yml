@@ -44,8 +44,3 @@ jobs:
           ${{ env.ssh-prefix }} rm ${{ env.temp-dir }}/remove.txt 
           ${{ env.ssh-prefix }} sudo cp -r ${{ env.temp-dir }}/* ${{ env.prod-dir }}
           ${{ env.ssh-prefix }} rm -r ${{ env.temp-dir }} 
-
-
-      
-      
-
